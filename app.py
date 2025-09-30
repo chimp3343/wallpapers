@@ -22,9 +22,9 @@ supabase = create_client(SUPABASE_URL, SUPABASE_KEY)
 BUCKET_NAME = "workshop"
 
 # --- Config ---
-BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 WORKSHOP_DIR = os.path.join(BASE_DIR, "workshop")
-STEAMCMD_DIR = "/steamdata/steamcmd"
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))  
+STEAMCMD_DIR = os.path.join(BASE_DIR, "steamdata")
 
 os.makedirs(WORKSHOP_DIR, exist_ok=True)
 os.makedirs(STEAMCMD_DIR, exist_ok=True)
