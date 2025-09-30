@@ -6,7 +6,7 @@ from flask import Flask, request, jsonify, render_template, redirect
 from dotenv import load_dotenv
 from threading import Thread, Semaphore, Lock
 import platform
-from supabase import create_client
+from supabase import create_client, Client
 from pathlib import Path
 
 # --- Load environment variables ---
