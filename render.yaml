@@ -1,0 +1,26 @@
+services:
+  - type: web
+    name: workshop-downloader
+    env: python
+    buildCommand: |
+      apt-get update && apt-get install -y curl lib32gcc-s1
+      mkdir -p steamcmd && cd steamcmd
+      curl -sqL "https://steamcdn-a.akamaihd.net/client/installer/steamcmd_linux.tar.gz" | tar zxvf -
+      cd ..
+      pip install -r requirements.txt
+    startCommand: gunicorn app:app --bind 0.0.0.0:$PORT
+    envVars:
+      - key: STEAM_USER
+        sync: false
+      - key: STEAM_PASS
+        sync: false
+      - key: APPID
+        value: "107410"
+      - key: SUPABASE_URL
+        sync: false
+      - key: SUPABASE_KEY
+        sync: false
+    disk:
+      name: steamdata
+      mountPath: /steamdata
+      sizeGB: 1
