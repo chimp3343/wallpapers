@@ -3,6 +3,7 @@ authlib
 requests
 Flask-Limiter
 Flask-Talisman
+supabase-py
 redis
 rq
 python-dotenv
