@@ -1,0 +1,210 @@
+"UserLocalConfigStore"
+{
+	"Broadcast"
+	{
+		"Permissions"		"1"
+	}
+	"friends"
+	{
+		"1065726149"
+		{
+			"NameHistory"
+			{
+				"0"		"moealturej"
+			}
+		}
+		"PersonaName"		"moealturej"
+		"communitypreferences"		"18002000280130013800"
+		"contentdescriptorpreferences"		"0a08080510f0aab2c3060a08080210f0aab2c3060a08080110f0aab2c3060a08080410f0aab2c3060a08080310f0aab2c306"
+	}
+	"ParentalSettings"
+	{
+		"Settings"		"09c5b0853f000000004800"
+		"Signature"		"ade0cdbe28f7f267b840f50467de314a7b3ebcd3cb2994078fbf51a5d671284c2e2ad34e4f5783e26bcf0191035db2006bc11c837d90783b45630743915c78dcd50a628beb9167f6230d54f7223187b788d1e13c5b1e84ffa653ba297cd8a882413078ee8aa5d6e4cae6a8cc2e295daf42977041310d9185f952c2dbace68ba1ad6d69501f7c89f9f7eadba360e14b593a50f907e1476c60b6b8921797e644ace9e7e2f4ab6e2f8fe86d35e204dc4dd9f86364f912732c74b43073915c0cb375a42112b6eb83ace4e5221c7bbf3e0701ea8e0db25b431caccf886d1e9bca1b9f158289cf98a5d1a1c873b946e62bbd6a7eb578655549537fc616de5c00ccf636"
+	}
+	"Offline"
+	{
+		"Ticket"		"08c5e196fc0315525bdc68"
+		"Signature"		"64660c5120cf48ac84e69ce44f421b6fbe040bcf680acf28800e6b056f28549c88ce215bdf7e5e9a261526c00950f372bd39947cbb98760fda7c3858d798e4dd2e0f00c828a673a7c365333b5d5743f16a75fde80b7adf3d69bcb3bb9f465dca62eee77544031b514d14c44065a48e5206bfbe06a9fe1cd0470ff696dee4703d401b2e5db84080be44a8ad78e44d89f441aa542b7d07b5cb5ba057fcf46095df388cb1d36456d87610c1df08e93d4ccd7f4fff0944606e37a97ab67559f17739f57746789b922f0a92d03febe8b98f5eaab7f00eba55346576ea738cd7ae503d148f615acc383bd70f5c67605ea87e9d1aa86ef3a5f9202d379726d76239b3fc"
+		"EncryptedTicket"		"0a203c6229e01d0a5c50d222dbf499031395ee2cf8a553e2d2390a4555c8b8c5415312800264660c5120cf48ac84e69ce44f421b6fbe040bcf680acf28800e6b056f28549c88ce215bdf7e5e9a261526c00950f372bd39947cbb98760fda7c3858d798e4dd2e0f00c828a673a7c365333b5d5743f16a75fde80b7adf3d69bcb3bb9f465dca62eee77544031b514d14c44065a48e5206bfbe06a9fe1cd0470ff696dee4703d401b2e5db84080be44a8ad78e44d89f441aa542b7d07b5cb5ba057fcf46095df388cb1d36456d87610c1df08e93d4ccd7f4fff0944606e37a97ab67559f17739f57746789b922f0a92d03febe8b98f5eaab7f00eba55346576ea738cd7ae503d148f615acc383bd70f5c67605ea87e9d1aa86ef3a5f9202d379726d76239b3fc180622087af89b4bd684547c28043208f0d32fb091c138a9"
+		"EncryptedSignature"		"64660c5120cf48ac84e69ce44f421b6fbe040bcf680acf28800e6b056f28549c88ce215bdf7e5e9a261526c00950f372bd39947cbb98760fda7c3858d798e4dd2e0f00c828a673a7c365333b5d5743f16a75fde80b7adf3d69bcb3bb9f465dca62eee77544031b514d14c44065a48e5206bfbe06a9fe1cd0470ff696dee4703d401b2e5db84080be44a8ad78e44d89f441aa542b7d07b5cb5ba057fcf46095df388cb1d36456d87610c1df08e93d4ccd7f4fff0944606e37a97ab67559f17739f57746789b922f0a92d03febe8b98f5eaab7f00eba55346576ea738cd7ae503d148f615acc383bd70f5c67605ea87e9d1aa86ef3a5f9202d379726d76239b3fc"
+	}
+	"apptickets"
+	{
+		"7"		"3200000004000000c5b0853f0100100107000000f4645fae0e02a8c000000000525bdc68d20af86801000000000000000000884e5583a2cfa557e366d9c3a25322e3a23efaa6f5e10cb37397f6ae60a0b95f045dd42e18405805a944d158909cdd601b1ff43d594d2356619f69edc3bf69dc25932348ae50d697455e4afaa842aaec7cb3e0d02c9287ce7ebbe23416c4fef981ceac558d198c57648c1e12c52d03cfa5b676b5b11773eea2d83652b130fc37"
+	}
+	"AppInfoChangeNumber"		"31406015"
+	"CloudKey"		"0100000062c0d8fd1e0e6bfb1ece7447c41e4473e59e900030dce85f42cbcdc98367dc19d887c0c6"
+	"CloudKeyCRC"		"-348101541"
+	"Software"
+	{
+		"Valve"
+		{
+			"Steam"
+			{
+				"apps"
+				{
+					"7"
+					{
+						"cloud"
+						{
+							"last_sync_state"		"synchronized"
+						}
+					}
+					"218"
+					{
+						"LastPlayed"		"1757880940"
+						"Playtime"		"2632"
+						"PlaytimeDisconnected"		"2"
+					}
+					"480"
+					{
+						"LastPlayed"		"1735986883"
+						"Playtime"		"30"
+					}
+					"730"
+					{
+						"LastPlayed"		"1690719403"
+						"Playtime"		"72"
+					}
+					"3590"
+					{
+						"LastPlayed"		"1659584009"
+						"Playtime"		"15"
+					}
+					"244210"
+					{
+						"LastPlayed"		"1756012053"
+						"Playtime"		"8292"
+						"PlaytimeDisconnected"		"1"
+					}
+					"250820"
+					{
+						"LastPlayed"		"1691697667"
+						"Playtime"		"507"
+					}
+					"271590"
+					{
+						"LastPlayed"		"1757880815"
+						"Playtime"		"4325"
+						"PlaytimeDisconnected"		"1"
+					}
+					"286200"
+					{
+						"LastPlayed"		"1711809403"
+						"Playtime"		"29"
+					}
+					"311210"
+					{
+						"LastPlayed"		"1675040004"
+						"Playtime"		"4"
+					}
+					"365670"
+					{
+						"LastPlayed"		"1732334982"
+						"Playtime"		"4"
+					}
+					"431960"
+					{
+						"LastPlayed"		"1759134372"
+						"Playtime2wks"		"3"
+						"Playtime"		"65"
+						"PlaytimeDisconnected"		"1"
+					}
+					"715670"
+					{
+						"LastPlayed"		"1669576418"
+						"Playtime"		"507"
+					}
+					"733580"
+					{
+						"LastPlayed"		"1691081155"
+						"Playtime"		"1"
+					}
+					"843420"
+					{
+						"LastPlayed"		"1691083227"
+						"Playtime"		"8"
+					}
+					"915320"
+					{
+						"LastPlayed"		"1713746983"
+						"Playtime"		"124"
+					}
+					"1172470"
+					{
+						"LastPlayed"		"1656453607"
+						"Playtime"		"30"
+					}
+					"1238880"
+					{
+						"LastPlayed"		"1659527710"
+						"Playtime"		"1"
+					}
+					"1364390"
+					{
+						"LastPlayed"		"1702331920"
+						"Playtime"		"44"
+					}
+					"1619990"
+					{
+						"LastPlayed"		"1662050458"
+						"Playtime"		"193"
+					}
+					"1818750"
+					{
+						"LastPlayed"		"1659598428"
+						"Playtime"		"27"
+					}
+					"1845630"
+					{
+						"LastPlayed"		"1691116097"
+						"Playtime"		"2"
+					}
+					"1928420"
+					{
+						"LastPlayed"		"1703332536"
+						"Playtime"		"307"
+					}
+					"1938090"
+					{
+						"LastPlayed"		"1740183337"
+						"Playtime"		"15"
+					}
+					"1985810"
+					{
+						"LastPlayed"		"1688265677"
+						"Playtime"		"118"
+					}
+					"2281730"
+					{
+						"LastPlayed"		"1745779847"
+						"Playtime"		"4269"
+					}
+					"2507950"
+					{
+						"LastPlayed"		"1757832337"
+						"Playtime"		"2101"
+					}
+					"2642680"
+					{
+						"LastPlayed"		"1750202896"
+						"Playtime"		"8"
+					}
+					"3081410"
+					{
+						"LastPlayed"		"1755452549"
+						"Playtime"		"1"
+					}
+					"3240220"
+					{
+						"LastPlayed"		"1754277847"
+						"Playtime"		"901"
+						"PlaytimeDisconnected"		"1"
+					}
+				}
+				"LastPlayedTimesSyncTime"		"1759134372"
+			}
+		}
+	}
+}
