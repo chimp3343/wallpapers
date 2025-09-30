@@ -24,8 +24,7 @@ BUCKET_NAME = "workshop"
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 
 # --- Config ---
-WORKSHOP_DIR = os.path.join(BASE_DIR, "workshop")
-BASE_DIR = os.path.dirname(os.path.abspath(__file__))  
+WORKSHOP_DIR = os.path.join(BASE_DIR, "workshop") 
 STEAMCMD_DIR = os.path.join(BASE_DIR, "steamdata")
 
 os.makedirs(WORKSHOP_DIR, exist_ok=True)
