@@ -21,6 +21,8 @@ SUPABASE_KEY = os.getenv("SUPABASE_KEY")
 supabase = create_client(SUPABASE_URL, SUPABASE_KEY)
 BUCKET_NAME = "workshop"
 
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+
 # --- Config ---
 WORKSHOP_DIR = os.path.join(BASE_DIR, "workshop")
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))  
