@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Workshop Downloads</title>
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700;900&family=Exo+2:wght@300;400;500&display=swap" rel="stylesheet">
+
+<!-- Google AdSense -->
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXX" crossorigin="anonymous"></script>
+
+<!-- Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-XXXXXXXXXX');
+</script>
+
+<style>
+:root {
+  --primary: #ff33ff;
+  --primary-light: #ff99ff;
+  --primary-dark: #cc00cc;
+  --secondary: #00ffff;
+  --secondary-light: #99ffff;
+  --dark-bg: #0a0a0a;
+  --darker-bg: #050505;
+  --card-bg: rgba(20,5,30,0.85);
+  --card-border: rgba(255,51,255,0.3);
+  --text: #ffffff;
+  --text-dim: #cccccc;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  font-family: 'Exo 2', sans-serif;
+  margin: 0;
+  padding: 2rem;
+  color: var(--text);
+  background: linear-gradient(135deg, var(--darker-bg), #1a001a);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  overflow-x: hidden;
+}
+
+/* Animated background */
+.background-effects { position: fixed; top:0; left:0; width:100%; height:100%; z-index:0; pointer-events:none; }
+.grid-lines { position: fixed; top:0; left:0; width:100%; height:100%; background-image: linear-gradient(rgba(255,51,255,0.05) 1px, transparent 1px), linear-gradient(90deg, rgba(255,51,255,0.05) 1px, transparent 1px); background-size: 50px 50px; z-index:0; }
+
+h1 { font-family: 'Orbitron', sans-serif; text-align:center; color: var(--primary); text-shadow: 0 0 10px var(--primary), 0 0 20px var(--primary); margin-bottom:2rem; font-size:2.5rem; font-weight:900; letter-spacing:2px; }
+
+#searchBar {
+  display:block; margin:0 auto 2rem auto; padding:1rem 1.2rem; width:100%; max-width:500px;
+  border-radius:12px; border:1px solid var(--card-border); background: rgba(10,5,15,0.8); color: var(--text); font-size:1rem;
+  box-shadow: inset 0 0 10px rgba(0,0,0,0.5), 0 0 15px rgba(255,51,255,0.1); transition: all 0.3s;
+}
+#searchBar:focus { outline:none; border-color: var(--primary); box-shadow: inset 0 0 10px rgba(0,0,0,0.5), 0 0 20px var(--primary); }
+
+.grid {
+  display: grid; grid-template-columns: repeat(4,1fr); gap:1rem; width:100%; max-width:1200px; z-index:1;
+}
+
+.card {
+  background: var(--card-bg); border-radius:15px; padding:1rem; text-align:center; border-left:4px solid var(--primary);
+  box-shadow:0 5px 15px rgba(0,0,0,0.3); transition: all 0.3s ease; position:relative; overflow:hidden;
+  display:flex; flex-direction:column; align-items:center; justify-content:space-between;
+}
+
+.card:hover { transform: translateY(-5px); box-shadow:0 0 20px var(--primary); }
+
+.card img { max-width:100%; border-radius:10px; margin-bottom:0.8rem; }
+
+.card h2 { color: var(--primary-light); font-family: 'Orbitron', sans-serif; margin-bottom:0.5rem; word-break: break-word; font-size:1rem; }
+
+.card a {
+  display:inline-block; padding:0.6rem 1.2rem; border-radius:10px;
+  background:linear-gradient(45deg, var(--primary-dark), var(--primary)); color:#fff; text-decoration:none;
+  font-weight:bold; font-family:'Orbitron',sans-serif; font-size:0.9rem; box-shadow:0 0 15px rgba(255,51,255,0.4); transition:all 0.3s; z-index:1;
+}
+
+.card a:hover { background:linear-gradient(45deg, var(--primary), var(--primary-light)); box-shadow:0 0 20px var(--primary); transform:translateY(-2px); }
+
+.footer { display:flex; justify-content:center; gap:1.5rem; flex-wrap:wrap; margin-top:2.5rem; }
+.footer a { color: var(--primary); text-decoration:none; font-weight:bold; padding:0.6rem 1.2rem; border-radius:8px; background: rgba(255,51,255,0.1); border:1px solid rgba(255,51,255,0.3); transition: all 0.3s ease; font-family:'Orbitron',sans-serif; }
+.footer a:hover { color: var(--primary-light); background: rgba(255,51,255,0.2); box-shadow:0 0 15px var(--primary); transform:translateY(-2px); }
+
+@media(max-width:1200px){.grid{grid-template-columns:repeat(3,1fr);}}
+@media(max-width:900px){.grid{grid-template-columns:repeat(2,1fr);}}
+@media(max-width:600px){.grid{grid-template-columns:1fr;}}
+</style>
+</head>
+<body>
+
+<div class="background-effects"><div class="grid-lines"></div></div>
+
+<h1>Workshop Downloads</h1>
+
+<input type="text" id="searchBar" placeholder="Search downloads...">
+
+<!-- AdSense -->
+<ins class="adsbygoogle" style="display:block; text-align:center; margin: 1rem auto;"
+     data-ad-client="ca-pub-XXXX"
+     data-ad-slot="1234567890"
+     data-ad-format="auto"
+     data-full-width-responsive="true"></ins>
+<script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+
+<div class="grid" id="downloadsGrid">
+{% if items %}
+  {% for item in items %}
+  <div class="card">
+    {% if item.thumbnail %}
+      <img src="{{ item.thumbnail }}" alt="{{ item.id }} thumbnail">
+    {% endif %}
+    <h2>{{ item.id }}</h2>
+    {% if item.size %}
+      <p style="font-size:0.8rem; color: var(--text-dim);">{{ item.size }} MB</p>
+    {% endif %}
+    <a href="{{ item.url }}" target="_blank">Download</a>
+  </div>
+  {% endfor %}
+{% else %}
+  <p style="text-align:center; color: var(--text-dim);">No downloads available.</p>
+{% endif %}
+</div>
+
+<div class="footer">
+  <a href="/" class="downloads-link">← Back to Queue</a>
+  <a href="https://moealturej.com" class="main-link">Main Site</a>
+  <a href="https://moealturej.com/donate" class="donate-link" target="_blank">Support Project</a>
+</div>
+
+<script>
+// Search functionality
+const searchBar = document.getElementById('searchBar');
+const grid = document.getElementById('downloadsGrid');
+const cards = Array.from(grid.getElementsByClassName('card'));
+
+searchBar.addEventListener('input', function() {
+  const query = this.value.toLowerCase();
+  cards.forEach(card => {
+    const text = card.querySelector('h2').textContent.toLowerCase();
+    card.style.display = text.includes(query) ? 'flex' : 'none';
+  });
+});
+</script>
+</body>
+</html>

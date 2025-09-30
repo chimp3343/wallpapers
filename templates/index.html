@@ -1,0 +1,702 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Workshop Downloader</title>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700;900&family=Exo+2:wght@300;400;500&display=swap" rel="stylesheet">
+
+<!-- ✅ Google AdSense -->
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXX"
+     crossorigin="anonymous"></script>
+
+<!-- ✅ Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-XXXXXXXXXX');
+</script>
+
+<style>
+/* --- Global --- */
+:root {
+  --primary: #ff33ff;
+  --primary-light: #ff99ff;
+  --primary-dark: #cc00cc;
+  --secondary: #00ffff;
+  --secondary-light: #99ffff;
+  --dark-bg: #0a0a0a;
+  --darker-bg: #050505;
+  --card-bg: rgba(20, 5, 30, 0.8);
+  --card-border: rgba(255, 51, 255, 0.3);
+  --text: #ffffff;
+  --text-dim: #cccccc;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Exo 2', sans-serif;
+  margin: 0;
+  padding: 0;
+  color: var(--text);
+  background: linear-gradient(135deg, var(--darker-bg), #1a001a);
+  min-height: 100vh;
+  overflow-x: hidden;
+  position: relative;
+}
+
+h1, h2, h3 {
+  font-family: 'Orbitron', sans-serif;
+  margin-top: 0;
+}
+
+h1 {
+  text-align: center;
+  color: var(--primary);
+  text-shadow: 0 0 10px var(--primary), 0 0 20px var(--primary), 0 0 30px var(--primary);
+  margin: 2rem 0 1.5rem;
+  font-weight: 900;
+  font-size: 2.5rem;
+  letter-spacing: 2px;
+  position: relative;
+  display: inline-block;
+  padding: 0 20px;
+}
+
+h1::before, h1::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  width: 30px;
+  height: 2px;
+  background: var(--primary);
+  box-shadow: 0 0 5px var(--primary);
+}
+
+h1::before {
+  left: -10px;
+}
+
+h1::after {
+  right: -10px;
+}
+
+/* --- Container --- */
+.container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 1.5rem;
+  position: relative;
+  z-index: 1;
+}
+
+.header-container {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.subtitle {
+  color: var(--text-dim);
+  font-size: 1.1rem;
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+/* --- Form --- */
+.form-container {
+  background: var(--card-bg);
+  border-radius: 15px;
+  padding: 2rem;
+  margin-bottom: 2rem;
+  box-shadow: 0 0 20px rgba(255, 51, 255, 0.2);
+  border: 1px solid var(--card-border);
+  position: relative;
+  overflow: hidden;
+}
+
+.form-container::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, var(--primary), var(--secondary));
+  box-shadow: 0 0 10px var(--primary);
+}
+
+form {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 0;
+}
+
+.input-group {
+  flex: 1;
+  position: relative;
+}
+
+input[type="text"] {
+  width: 100%;
+  padding: 1rem 1.2rem;
+  border-radius: 10px;
+  border: 1px solid rgba(255, 51, 255, 0.3);
+  font-size: 1rem;
+  background: rgba(10, 5, 15, 0.8);
+  color: var(--text);
+  box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.5), 0 0 15px rgba(255, 51, 255, 0.1);
+  transition: all 0.3s ease;
+  font-family: 'Exo 2', sans-serif;
+}
+
+input[type="text"]:focus {
+  outline: none;
+  border-color: var(--primary);
+  box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.5), 0 0 20px var(--primary);
+}
+
+input[type="text"]::placeholder {
+  color: #666;
+}
+
+button {
+  padding: 1rem 1.8rem;
+  border: none;
+  border-radius: 10px;
+  background: linear-gradient(45deg, var(--primary-dark), var(--primary));
+  color: #fff;
+  cursor: pointer;
+  font-weight: bold;
+  transition: all 0.3s ease;
+  font-family: 'Orbitron', sans-serif;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  font-size: 0.9rem;
+  box-shadow: 0 0 15px rgba(255, 51, 255, 0.4);
+  position: relative;
+  overflow: hidden;
+}
+
+button:hover {
+  background: linear-gradient(45deg, var(--primary), var(--primary-light));
+  box-shadow: 0 0 20px var(--primary), 0 0 30px rgba(255, 51, 255, 0.5);
+  transform: translateY(-2px);
+}
+
+button:active {
+  transform: translateY(0);
+}
+
+button::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  transition: left 0.5s;
+}
+
+button:hover::after {
+  left: 100%;
+}
+
+/* --- Status List --- */
+.status-container {
+  background: var(--card-bg);
+  border-radius: 15px;
+  padding: 2rem;
+  margin-bottom: 2rem;
+  box-shadow: 0 0 20px rgba(255, 51, 255, 0.2);
+  border: 1px solid var(--card-border);
+  position: relative;
+  overflow: hidden;
+}
+
+.status-container::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, var(--secondary), var(--primary));
+  box-shadow: 0 0 10px var(--secondary);
+}
+
+.status-list {
+  margin-top: 1rem;
+}
+
+.status-item {
+  background: rgba(30, 10, 40, 0.7);
+  padding: 1.2rem 1.5rem;
+  border-radius: 10px;
+  margin-bottom: 0.8rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-left: 4px solid var(--primary);
+  position: relative;
+  transition: all 0.3s ease;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.status-item:hover {
+  background: rgba(40, 15, 50, 0.9);
+  box-shadow: 0 0 15px rgba(255, 51, 255, 0.3);
+  transform: translateY(-3px);
+}
+
+.status-item span:first-child {
+  font-weight: bold;
+  color: var(--primary-light);
+  font-family: 'Orbitron', sans-serif;
+  letter-spacing: 1px;
+}
+
+.status-text {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+/* --- Spinner --- */
+.spinner {
+  width: 18px;
+  height: 18px;
+  border: 3px solid rgba(255, 51, 255, 0.3);
+  border-top: 3px solid var(--primary);
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  display: inline-block;
+  box-shadow: 0 0 10px var(--primary);
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* --- Links --- */
+.links-container {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  margin: 2.5rem 0;
+  flex-wrap: wrap;
+}
+
+a.downloads-link, a.main-link, a.donate-link {
+  color: var(--primary);
+  font-weight: bold;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  padding: 0.8rem 1.5rem;
+  border-radius: 8px;
+  background: rgba(255, 51, 255, 0.1);
+  border: 1px solid rgba(255, 51, 255, 0.3);
+  font-family: 'Orbitron', sans-serif;
+  letter-spacing: 1px;
+  font-size: 0.9rem;
+  position: relative;
+  overflow: hidden;
+}
+
+a.downloads-link:hover, a.main-link:hover, a.donate-link:hover {
+  color: var(--primary-light);
+  background: rgba(255, 51, 255, 0.2);
+  box-shadow: 0 0 15px var(--primary);
+  transform: translateY(-2px);
+}
+
+/* --- Donation / Info Section --- */
+.info-section {
+  background: var(--card-bg);
+  border-radius: 15px;
+  padding: 2rem;
+  margin-top: 2rem;
+  text-align: center;
+  box-shadow: 0 0 20px rgba(255, 51, 255, 0.2);
+  border: 1px solid var(--card-border);
+  position: relative;
+  overflow: hidden;
+}
+
+.info-section::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, var(--primary), var(--secondary));
+  box-shadow: 0 0 10px var(--primary);
+}
+
+.info-section h2 {
+  color: var(--primary);
+  margin-bottom: 1rem;
+  font-weight: 700;
+}
+
+.info-section p {
+  color: var(--text-dim);
+  margin-bottom: 1.5rem;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+  line-height: 1.6;
+}
+
+.info-section a {
+  display: inline-block;
+  margin-top: 0.5rem;
+  background: linear-gradient(45deg, var(--primary-dark), var(--primary));
+  padding: 0.8rem 1.8rem;
+  border-radius: 8px;
+  text-decoration: none;
+  color: #fff;
+  font-weight: bold;
+  transition: all 0.3s ease;
+  font-family: 'Orbitron', sans-serif;
+  letter-spacing: 1px;
+  box-shadow: 0 0 15px rgba(255, 51, 255, 0.4);
+}
+
+.info-section a:hover {
+  background: linear-gradient(45deg, var(--primary), var(--primary-light));
+  box-shadow: 0 0 20px var(--primary), 0 0 30px rgba(255, 51, 255, 0.5);
+  transform: translateY(-2px);
+}
+
+/* ✅ AdSense Block Styling */
+.adsbygoogle {
+  margin: 1rem auto;
+  display: block;
+}
+
+/* --- FAQ Section --- */
+.faq-section {
+  margin-top: 2rem;
+}
+
+.faq-section h2 {
+  color: var(--primary);
+  text-align: center;
+  margin-bottom: 1.5rem;
+  font-weight: 700;
+}
+
+.faq-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1.5rem;
+}
+
+.faq-card {
+  background: rgba(30, 10, 40, 0.7);
+  border-left: 4px solid var(--primary);
+  border-radius: 10px;
+  padding: 1.5rem;
+  transition: all 0.3s ease;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  height: 100%;
+}
+
+.faq-card:hover {
+  background: rgba(40, 15, 50, 0.9);
+  box-shadow: 0 0 15px rgba(255, 51, 255, 0.3);
+  transform: translateY(-5px);
+}
+
+.faq-card h3 {
+  margin: 0 0 0.8rem 0;
+  color: var(--primary-light);
+  font-size: 1.1rem;
+}
+
+.faq-card p {
+  margin: 0;
+  color: var(--text-dim);
+  line-height: 1.5;
+}
+
+/* --- Animated background --- */
+.background-effects {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.particle {
+  position: absolute;
+  background: var(--primary);
+  border-radius: 50%;
+  opacity: 0.3;
+  animation: float 15s infinite linear;
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(0) translateX(0);
+    opacity: 0;
+  }
+  10% {
+    opacity: 0.3;
+  }
+  90% {
+    opacity: 0.3;
+  }
+  100% {
+    transform: translateY(-100vh) translateX(100px);
+    opacity: 0;
+  }
+}
+
+.grid-lines {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: 
+    linear-gradient(rgba(255, 51, 255, 0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 51, 255, 0.05) 1px, transparent 1px);
+  background-size: 50px 50px;
+  z-index: 0;
+  pointer-events: none;
+}
+
+/* --- Responsive --- */
+@media (max-width: 768px) {
+  .container {
+    padding: 1rem;
+  }
+  
+  h1 {
+    font-size: 2rem;
+  }
+  
+  form {
+    flex-direction: column;
+  }
+  
+  .links-container {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .faq-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .status-item {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
+  
+  .status-text {
+    align-self: flex-end;
+  }
+}
+
+/* --- Notification --- */
+.notification {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  padding: 1rem 1.5rem;
+  background: var(--card-bg);
+  border-left: 4px solid var(--primary);
+  border-radius: 8px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+  transform: translateX(150%);
+  transition: transform 0.3s ease;
+  z-index: 1000;
+  max-width: 300px;
+}
+
+.notification.show {
+  transform: translateX(0);
+}
+
+.notification.success {
+  border-left-color: #00ff00;
+}
+
+.notification.error {
+  border-left-color: #ff3333;
+}
+</style>
+</head>
+<body>
+  <div class="background-effects">
+    <div class="grid-lines"></div>
+  </div>
+
+  <div class="container">
+    <div class="header-container">
+      <h1>WORKSHOP DOWNLOADER</h1>
+      <p class="subtitle">Download Steam Workshop items with ease</p>
+    </div>
+
+    <!-- Search + Add Form -->
+    <div class="form-container">
+      <form id="addForm">
+        <div class="input-group">
+          <input type="text" name="workshop_id" placeholder="Enter Workshop ID or URL" required>
+        </div>
+        <button type="submit">Add to Queue</button>
+      </form>
+    </div>
+
+    <!-- Status -->
+    <div class="status-container">
+      <h2>Download Status</h2>
+      <div class="status-list" id="statusList">
+        <div class="status-item empty-state">
+          <span>No downloads in queue</span>
+          <div class="status-text">Add a Workshop ID to begin</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Links -->
+    <div class="links-container">
+      <a href="/downloads" class="downloads-link">View Downloads</a>
+      <a href="https://moealturej.com" class="main-link">Main Site</a>
+      <a href="https://moealturej.com/donate" class="donate-link" target="_blank">Support Project</a>
+    </div>
+
+    <!-- Info -->
+    <div class="info-section">
+      <h2>Support This Free Service</h2>
+      <p>This tool is completely free to use. If you find it helpful and want to support its development and maintenance, please consider making a donation. Your support helps keep this service running and improves it for everyone.</p>
+      <a href="https://moealturej.com/donate" target="_blank">Donate Now</a>
+    </div>
+
+    <!-- FAQ -->
+    <div class="faq-section">
+      <h2>Frequently Asked Questions</h2>
+      <div class="faq-grid">
+        <div class="faq-card"><h3>How do I find the Workshop ID?</h3><p>Go to the Steam Workshop item page and copy the ID from the URL. It's the long number after ?id=</p></div>
+        <div class="faq-card"><h3>Is this tool completely free?</h3><p>Yes! This service is completely free to use. Donations are optional but greatly appreciated.</p></div>
+        <div class="faq-card"><h3>Where do my downloads go?</h3><p>All downloaded files are saved to our server and can be accessed from the Downloads page.</p></div>
+        <div class="faq-card"><h3>Can I download multiple items?</h3><p>Yes, just enter each Workshop ID one at a time. You can track all downloads in the status list.</p></div>
+        <div class="faq-card"><h3>What file formats are supported?</h3><p>We support all common Workshop item types including maps, mods, skins, and other content.</p></div>
+        <div class="faq-card"><h3>How long do downloads take?</h3><p>Download times vary based on file size and server load. Most items download in under a minute.</p></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="notification" id="notification"></div>
+
+  <script>
+    // Background particles
+    function createParticles() {
+      const effectsContainer = document.querySelector('.background-effects');
+      const particleCount = 30;
+      for (let i = 0; i < particleCount; i++) {
+        const particle = document.createElement('div');
+        particle.classList.add('particle');
+        const size = Math.random() * 4 + 2;
+        particle.style.width = `${size}px`;
+        particle.style.height = `${size}px`;
+        particle.style.left = `${Math.random() * 100}vw`;
+        particle.style.top = `${Math.random() * 100}vh`;
+        particle.style.background = Math.random() > 0.5 ? 'var(--primary)' : 'var(--secondary)';
+        const delay = Math.random() * 15;
+        const duration = 15 + Math.random() * 10;
+        particle.style.animationDelay = `${delay}s`;
+        particle.style.animationDuration = `${duration}s`;
+        effectsContainer.appendChild(particle);
+      }
+    }
+
+    function showNotification(message, type = 'info') {
+      const notification = document.getElementById('notification');
+      notification.textContent = message;
+      notification.className = 'notification';
+      notification.classList.add(type, 'show');
+      setTimeout(() => notification.classList.remove('show'), 3000);
+    }
+
+    document.addEventListener('DOMContentLoaded', function() {
+      createParticles();
+      const form = document.getElementById('addForm');
+      const statusList = document.getElementById('statusList');
+      const emptyState = document.querySelector('.empty-state');
+
+      form.addEventListener('submit', async (e) => {
+        e.preventDefault();
+        const id = form.workshop_id.value.trim();
+        if (!id) return;
+        const workshopId = extractWorkshopId(id);
+        if (!workshopId) {
+          showNotification('Invalid Workshop ID or URL', 'error');
+          return;
+        }
+        const res = await fetch('/add', { method: 'POST', body: new URLSearchParams({ workshop_id: workshopId }) });
+        const data = await res.json();
+        if (data.message) {
+          if (emptyState) emptyState.remove();
+          addStatusItem(workshopId);
+          form.workshop_id.value = '';
+          showNotification('Workshop item added to download queue', 'success');
+        } else {
+          showNotification('Failed to add workshop item', 'error');
+        }
+      });
+
+      function extractWorkshopId(input) {
+        if (/^\d+$/.test(input)) return input;
+        const match = input.match(/(?:id=|filedetails\/\?id=)(\d+)/);
+        return match ? match[1] : null;
+      }
+
+      function addStatusItem(id) {
+        if (document.getElementById('status-' + id)) return;
+        const div = document.createElement('div');
+        div.className = 'status-item';
+        div.id = 'status-' + id;
+        div.innerHTML = `<span>${id}</span><div class="status-text"><span id="status-text-${id}">Queued...</span></div>`;
+        statusList.appendChild(div);
+        updateStatus(id);
+      }
+
+      async function updateStatus(id) {
+        const span = document.getElementById('status-text-' + id);
+        if (!span) return;
+        const res = await fetch('/status/' + id);
+        const data = await res.json();
+        if (data.status === "Downloading...") {
+          span.innerHTML = 'Downloading <span class="spinner"></span>';
+        } else {
+          span.textContent = data.status;
+          const statusItem = document.getElementById('status-' + id);
+          if (data.status === "Download complete") {
+            statusItem.style.borderLeftColor = '#00ff00';
+          } else if (data.status.includes("Failed") || data.status.includes("error")) {
+            statusItem.style.borderLeftColor = '#ff3333';
+          }
+        }
+        if (!["Download complete", "Already downloaded", "SteamCMD failed", "Failed to find downloaded files"].includes(data.status)) {
+          setTimeout(() => updateStatus(id), 1000);
+        }
+      }
+    });
+  </script>
+</body>
+</html>

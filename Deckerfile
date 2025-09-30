@@ -1,0 +1,30 @@
+# Base image
+FROM ubuntu:24.04
+
+# Install dependencies
+RUN apt-get update && apt-get install -y \
+    python3 python3-pip wget unzip xz-utils lib32gcc1 lib32stdc++6 \
+    && rm -rf /var/lib/apt/lists/*
+
+# Set working directory
+WORKDIR /app
+
+# Copy project files
+COPY . .
+
+# Install Python dependencies
+RUN pip3 install --no-cache-dir -r requirements.txt
+
+# Download SteamCMD
+RUN wget https://steamcdn-a.akamaihd.net/client/installer/steamcmd_linux.tar.gz \
+    && mkdir -p steamcmd \
+    && tar -xvzf steamcmd_linux.tar.gz -C steamcmd
+
+# Ensure workshop folder exists
+RUN mkdir -p workshop
+
+# Expose port 10000 for Flask
+EXPOSE 10000
+
+# Run Flask app
+CMD ["python3", "app.py"]

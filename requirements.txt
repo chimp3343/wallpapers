@@ -1,0 +1,8 @@
+Flask
+authlib
+requests
+Flask-Limiter
+Flask-Talisman
+redis
+rq
+python-dotenv
